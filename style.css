@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #f4f6f8;
+    color: #243447;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    padding: 40px 20px;
+    background: #173b57;
+    color: white;
+    text-align: center;
+}
+
+header p {
+    margin-top: 10px;
+}
+
+main {
+    width: min(1000px, 90%);
+    margin: 30px auto;
+}
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.cartao,
+.materias,
+.questoes {
+    padding: 24px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cartao h2,
+.materias h2,
+.questoes h2 {
+    margin-bottom: 12px;
+    color: #173b57;
+}
+
+.materias,
+.questoes {
+    margin-top: 25px;
+}
+
+.materias label {
+    display: block;
+    margin: 14px 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+input[type="number"] {
+    width: 180px;
+    padding: 10px;
+    border: 1px solid #aab5bf;
+    border-radius: 5px;
+}
+
+button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 5px;
+    background: #147d64;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0f624e;
+}
+
+#mensagem {
+    min-height: 20px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+footer {
+    padding: 20px;
+    color: #5b6670;
+    text-align: center;
+}
