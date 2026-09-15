@@ -94,3 +94,15 @@ footer {
     color: #5b6670;
     text-align: center;
 }
+.objetivo {
+    margin-top: 25px;
+    padding: 24px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.objetivo h2 {
+    margin-bottom: 12px;
+    color: #173b57;
+}
