@@ -1,0 +1,29 @@
+name: Continuous Integration
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  verificar-projeto:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Verificar arquivos
+        run: |
+          test -f index.html
+          test -f style.css
+          test -f script.js
+
+      - name: Verificar JavaScript
+        run: node --check script.js
