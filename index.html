@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Estudos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Painel de Estudos</h1>
+    <p>Organize sua preparação e acompanhe seu progresso.</p>
+</header>
+
+<main>
+    <section class="resumo">
+        <div class="cartao">
+            <h2>Meta diária</h2>
+            <p>3 horas de estudo</p>
+        </div>
+
+        <div class="cartao">
+            <h2>Questões</h2>
+            <p id="totalQuestoes">0 questões resolvidas</p>
+        </div>
+
+        <div class="cartao">
+            <h2>Disciplinas</h2>
+            <p>4 matérias em andamento</p>
+        </div>
+    </section>
+
+    <section class="materias">
+        <h2>Plano de hoje</h2>
+
+        <label>
+            <input type="checkbox">
+            Direito Administrativo
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Língua Portuguesa
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Raciocínio Lógico
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Arquivologia
+        </label>
+    </section>
+
+    <section class="questoes">
+        <h2>Registrar questões resolvidas</h2>
+
+        <input
+                type="number"
+                id="quantidade"
+                min="1"
+                placeholder="Quantidade"
+        >
+
+        <button id="registrar">Registrar</button>
+        <p id="mensagem"></p>
+    </section>
+    <section class="objetivo">
+        <h2>Objetivo</h2>
+        <p>
+            Manter uma rotina de estudos organizada e acompanhar
+            diariamente o número de questões resolvidas.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>Projeto acadêmico de DevOps</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
