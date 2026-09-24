@@ -1,0 +1,36 @@
+name: Alerta no Discord
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  enviar-alerta:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enviar mensagem ao Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          REPOSITORIO: ${{ github.repository }}
+          AUTOR: ${{ github.actor }}
+          COMMIT_URL: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+        run: |
+          MENSAGEM="✅ GitHub Actions executado com sucesso!
+
+          Repositório: ${REPOSITORIO}
+          Branch: main
+          Autor: ${AUTOR}
+          Commit: ${COMMIT_URL}"
+
+          JSON=$(jq -n --arg content "$MENSAGEM" '{"content": $content}')
+
+          curl --fail-with-body \
+            -H "Content-Type: application/json" \
+            -d "$JSON" \
+            "$DISCORD_WEBHOOK_URL"
