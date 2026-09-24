@@ -1,0 +1,28 @@
+name: Continuous Delivery
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  gerar-artefato:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o codigo
+        uses: actions/checkout@v4
+
+      - name: Preparar site
+        run: |
+          mkdir dist
+          cp index.html dist/
+          cp style.css dist/
+          cp script.js dist/
+
+      - name: Publicar artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: painel-de-estudos
+          path: dist
